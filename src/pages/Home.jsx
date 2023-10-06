@@ -4,7 +4,16 @@ import Form from '../components/layout/Form'
 function Home() {
   const [actorOne, setActorOne] = React.useState('')
   const [actorTwo, setActorTwo] = React.useState('')
-  const [NamesObject, setNamesObject] = React.useState(null)
+  const [names, setNames] = React.useState({
+    one: '',
+    two: '',
+  })
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    setNames({ one: actorOne, two: actorTwo })
+    alert(`form submitted ${actorOne + '' + actorTwo}`)
+  }
 
   return (
     <div>
@@ -13,9 +22,10 @@ function Home() {
         actorTwo={actorTwo}
         setActorOne={setActorOne}
         setActorTwo={setActorTwo}
+        handleSubmit={handleSubmit}
       />
-      <p>1.{actorOne}</p>
-      <p>2.{actorTwo}</p>
+      <p>1.{names.one}</p>
+      <p>2.{names.two}</p>
     </div>
   )
 }
