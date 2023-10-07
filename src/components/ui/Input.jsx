@@ -1,15 +1,15 @@
 import React from 'react'
 
-function Input({ inputName, actorName, setActor }) {
+function Input({ inputName, handleChange, names }) {
   return (
     <div>
       <label>{inputName}:</label>
       <input
-        value={actorName}
+        value={names.inputName}
         name={inputName}
         type='text'
         placeholder='Enter Name'
-        onChange={(e) => setActor(e.target.value)}
+        onChange={handleChange}
       />
     </div>
   )
