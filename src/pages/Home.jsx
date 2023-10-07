@@ -2,30 +2,32 @@ import React from 'react'
 import Form from '../components/layout/Form'
 
 function Home() {
-  const [actorOne, setActorOne] = React.useState('')
-  const [actorTwo, setActorTwo] = React.useState('')
   const [names, setNames] = React.useState({
-    one: '',
-    two: '',
+    actorOne: '',
+    actorTwo: '',
   })
+
+  const handleChange = (event) => {
+    setNames({
+      ...names,
+      [event.target.name]: event.target.value,
+    })
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    setNames({ one: actorOne, two: actorTwo })
-    alert(`form submitted ${actorOne + '' + actorTwo}`)
+    alert(`form submitted ${names.actorOne + ' ' + names.actorTwo}`)
   }
 
   return (
     <div>
       <Form
-        actorOne={actorOne}
-        actorTwo={actorTwo}
-        setActorOne={setActorOne}
-        setActorTwo={setActorTwo}
+        names={names}
         handleSubmit={handleSubmit}
+        handleChange={handleChange}
       />
-      <p>1.{names.one}</p>
-      <p>2.{names.two}</p>
+      <p>1.{names.actorOne}</p>
+      <p>2.{names.actorTwo}</p>
     </div>
   )
 }
