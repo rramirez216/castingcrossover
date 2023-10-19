@@ -1,11 +1,21 @@
-import React from 'react'
+import axios from 'axios'
 
-function useFetch() {
-  const 
+function useFetch(url) {
+  const [data, setData] = React.useState(null)
 
-  return (
-    <div>useFetch</div>
-  )
+  React.useEffect(() => {
+    const fetchData = async () => {
+      try {
+        let response = await axios.get(
+          'https://jsonplaceholder.typicode.com/users'
+        )
+      } catch (error) {
+        console.log(error.message)
+      }
+    }
+  }, [])
+
+  return
 }
 
 export default useFetch
