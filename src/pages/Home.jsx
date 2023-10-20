@@ -1,11 +1,15 @@
 import React from 'react'
 import Form from '../components/layout/Form'
+import List from '../components/layout/List'
+import useFetch from '../hooks/useFetch'
 
 function Home() {
   const [names, setNames] = React.useState({
     actorOne: '',
     actorTwo: '',
   })
+
+  const test = useFetch()
 
   const handleChange = (event) => {
     setNames({
@@ -17,6 +21,7 @@ function Home() {
   const handleSubmit = (event) => {
     event.preventDefault()
     alert(`form submitted ${names.actorOne + ' ' + names.actorTwo}`)
+    console.log(test)
   }
 
   return (
@@ -28,6 +33,7 @@ function Home() {
       />
       <p>1.{names.actorOne}</p>
       <p>2.{names.actorTwo}</p>
+      <List />
     </div>
   )
 }
