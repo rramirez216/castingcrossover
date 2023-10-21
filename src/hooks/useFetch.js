@@ -1,3 +1,4 @@
+import React from 'react'
 import axios from 'axios'
 
 function useFetch(url) {
@@ -13,9 +14,10 @@ function useFetch(url) {
         console.log(error.message)
       }
     }
+    fetchData()
   }, [])
 
-  return
+  return data
 }
 
 export default useFetch
