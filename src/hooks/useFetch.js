@@ -10,6 +10,8 @@ function useFetch(url) {
         let response = await axios.get(
           'https://jsonplaceholder.typicode.com/users'
         )
+
+        setData(response.data)
       } catch (error) {
         console.log(error.message)
       }
