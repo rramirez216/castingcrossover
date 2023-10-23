@@ -9,8 +9,6 @@ function Home() {
     actorTwo: '',
   })
 
-  const test = useFetch()
-
   const handleChange = (event) => {
     setNames({
       ...names,
@@ -20,8 +18,13 @@ function Home() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert(`form submitted ${names.actorOne + ' ' + names.actorTwo}`)
-    console.log(test)
+    let first = names.actorOne.split(' ').join('%20')
+
+    // alert(`form submitted ${names.actorOne + ' ' + names.actorTwo}`)
+    let firstActor = useFetch(
+      `https://api.themoviedb.org/3/search/person?query=${first}&include_adult=false&language=en-US`
+    )
+    console.log(firstActor[0].id)
   }
 
   return (
