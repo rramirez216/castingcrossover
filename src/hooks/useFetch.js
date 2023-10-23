@@ -7,11 +7,9 @@ function useFetch(url) {
   React.useEffect(() => {
     const fetchData = async () => {
       try {
-        let response = await axios.get(
-          'https://jsonplaceholder.typicode.com/users'
-        )
+        let response = await axios.get(url)
 
-        setData(response.data)
+        setData(response.data.result)
       } catch (error) {
         console.log(error.message)
       }
