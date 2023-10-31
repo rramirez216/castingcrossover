@@ -9,6 +9,8 @@ function Home() {
     actorTwo: '',
   })
 
+  const { fetchedData, fetchData } = useFetch()
+
   const handleChange = (event) => {
     setNames({
       ...names,
@@ -19,12 +21,15 @@ function Home() {
   const handleSubmit = (event) => {
     event.preventDefault()
     let first = names.actorOne.split(' ').join('%20')
+    let second = names.actorTwo.split(' ').join('%20')
 
-    // alert(`form submitted ${names.actorOne + ' ' + names.actorTwo}`)
-    let firstActor = useFetch(
-      `https://api.themoviedb.org/3/search/person?query=${first}&include_adult=false&language=en-US`
+    fetchData(
+      `https://api.themoviedb.org/3/search/person?api_key=&query=${first}&include_adult=false&language=en-US&page=1`
     )
-    console.log(firstActor[0].id)
+    fetchData(
+      `https://api.themoviedb.org/3/search/person?api_key=&query=${second}&include_adult=false&language=en-US&page=1`
+    )
+    // fetchData('https://jsonplaceholder.typicode.com/users')
   }
 
   return (
@@ -36,7 +41,7 @@ function Home() {
       />
       <p>1.{names.actorOne}</p>
       <p>2.{names.actorTwo}</p>
-      <List />
+      {/* <List /> */}
     </div>
   )
 }
