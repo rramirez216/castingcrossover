@@ -9,7 +9,7 @@ function Home() {
     actorTwo: '',
   })
 
-  const { fetchedData, fetchData } = useFetch()
+  const { firstActorData, secondActorData, fetchData } = useFetch()
 
   const handleChange = (event) => {
     setNames({
@@ -23,13 +23,7 @@ function Home() {
     let first = names.actorOne.split(' ').join('%20')
     let second = names.actorTwo.split(' ').join('%20')
 
-    fetchData(
-      `https://api.themoviedb.org/3/search/person?api_key=&query=${first}&include_adult=false&language=en-US&page=1`
-    )
-    fetchData(
-      `https://api.themoviedb.org/3/search/person?api_key=&query=${second}&include_adult=false&language=en-US&page=1`
-    )
-    // fetchData('https://jsonplaceholder.typicode.com/users')
+    fetchData(first, second)
   }
 
   return (
@@ -41,6 +35,7 @@ function Home() {
       />
       <p>1.{names.actorOne}</p>
       <p>2.{names.actorTwo}</p>
+      {/* TODO: pass the actor data to the list component */}
       {/* <List /> */}
     </div>
   )
