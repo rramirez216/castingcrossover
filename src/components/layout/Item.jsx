@@ -1,7 +1,7 @@
 import React from 'react'
 
-function Item() {
-  return <div>Item</div>
+function Item({ item }) {
+  return <div>{item}</div>
 }
 
 export default Item
