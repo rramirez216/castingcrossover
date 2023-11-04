@@ -9,8 +9,11 @@ function Home() {
     actorTwo: '',
   })
 
-  const { firstActorData, secondActorData, fetchData } = useFetch()
+  const { list, fetchData } = useFetch()
 
+  // TODO: create a variable that displays the total number of co staring credits and display on the page
+
+  // const totalCoStarCredits = list.length >
   const handleChange = (event) => {
     setNames({
       ...names,
@@ -33,10 +36,8 @@ function Home() {
         handleSubmit={handleSubmit}
         handleChange={handleChange}
       />
-      <p>1.{names.actorOne}</p>
-      <p>2.{names.actorTwo}</p>
-      {/* TODO: pass the actor data to the list component */}
-      {/* <List /> */}
+
+      <List list={list} />
     </div>
   )
 }
