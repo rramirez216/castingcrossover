@@ -11,9 +11,12 @@ function Home() {
 
   const { list, fetchData } = useFetch()
 
-  // TODO: create a variable that displays the total number of co staring credits and display on the page
+  //"Looks like these actors haven't shared the spotlight... yet!"
 
-  // const totalCoStarCredits = list.length >
+  const totalCoStarCredits =
+    list.length > 0
+      ? list.length
+      : `${0} Looks like these actors haven\'t shared the spotlight... yet!`
   const handleChange = (event) => {
     setNames({
       ...names,
@@ -37,7 +40,7 @@ function Home() {
         handleChange={handleChange}
       />
 
-      <List list={list} />
+      <List list={list} total={totalCoStarCredits} />
     </div>
   )
 }
