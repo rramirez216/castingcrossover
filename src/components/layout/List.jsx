@@ -5,7 +5,11 @@ function List({ list, total }) {
   if (list) {
     return (
       <div>
-        <p>On-Screen Encounters: {total}</p>
+        {typeof total === 'string' ? (
+          <p>{total}</p>
+        ) : (
+          <p>On-Screen Encounters: {total}</p>
+        )}
         {list.map((element, index) => (
           <Item item={element} key={index} />
         ))}
