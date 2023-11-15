@@ -11,10 +11,6 @@ function Home() {
 
   const { list, fetchData } = useFetch()
 
-  //"Looks like these actors haven't shared the spotlight... yet!"
-
-  // TODO: implement a function that uses the messages array to randomly choose a message to use in the total variable
-
   let totalCoStarCredits
   if (list) {
     totalCoStarCredits =
