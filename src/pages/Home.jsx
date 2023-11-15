@@ -13,10 +13,16 @@ function Home() {
 
   //"Looks like these actors haven't shared the spotlight... yet!"
 
-  const totalCoStarCredits =
-    list.length > 0
-      ? list.length
-      : `${0} Looks like these actors haven\'t shared the spotlight... yet!`
+  // TODO: implement a function that uses the messages array to randomly choose a message to use in the total variable
+
+  let totalCoStarCredits
+  if (list) {
+    totalCoStarCredits =
+      list.length > 0
+        ? list.length
+        : `Looks like these actors haven\'t shared the spotlight... yet!`
+  }
+
   const handleChange = (event) => {
     setNames({
       ...names,
