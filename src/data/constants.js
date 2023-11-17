@@ -12,3 +12,5 @@ const constantObj = {
     "Nada! Their cinematic worlds haven't collided.",
   ],
 }
+
+export default constantObj
