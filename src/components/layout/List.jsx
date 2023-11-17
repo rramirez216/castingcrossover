@@ -6,7 +6,10 @@ function List({ list, total }) {
     return (
       <div>
         {typeof total === 'string' ? (
-          <p>{total}</p>
+          <div>
+            <p>On-Screen Encounters: 0</p>
+            <p>{total}</p>
+          </div>
         ) : (
           <p>On-Screen Encounters: {total}</p>
         )}
