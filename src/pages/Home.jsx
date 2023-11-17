@@ -2,6 +2,7 @@ import React from 'react'
 import Form from '../components/layout/Form'
 import List from '../components/layout/List'
 import useFetch from '../hooks/useFetch'
+import randomMessage from '../util/randomMessage'
 
 function Home() {
   const [names, setNames] = React.useState({
@@ -13,10 +14,7 @@ function Home() {
 
   let totalCoStarCredits
   if (list) {
-    totalCoStarCredits =
-      list.length > 0
-        ? list.length
-        : `Looks like these actors haven\'t shared the spotlight... yet!`
+    totalCoStarCredits = list.length > 0 ? list.length : randomMessage()
   }
 
   const handleChange = (event) => {
