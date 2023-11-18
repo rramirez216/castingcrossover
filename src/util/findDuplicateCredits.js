@@ -5,8 +5,12 @@ function findDuplicateCredits(array1, array2) {
         obj.character !== 'Self' && obj.character !== 'Self (archive footage)'
     )
     .map((obj, index) => {
-      console.log({ name: obj.title, indice: index })
-      return obj.title
+      // console.log({ name: obj.title, indice: index })
+      return {
+        title: obj.title,
+        release_date: obj.release_date,
+        poster_path: obj.poster_path,
+      }
     })
   let filteredArr = combinedArr.filter(
     (string, index) => combinedArr.indexOf(string) !== index
