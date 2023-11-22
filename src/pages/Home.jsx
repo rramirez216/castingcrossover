@@ -12,6 +12,8 @@ function Home() {
 
   const { list, fetchData } = useFetch()
 
+  // TODO: start styling! center everything. research other online web tool pages layouts.
+
   let totalCoStarCredits
   if (list) {
     totalCoStarCredits = list.length > 0 ? list.length : randomMessage()
@@ -33,7 +35,7 @@ function Home() {
   }
 
   return (
-    <div>
+    <main className='h-full flex flex-col items-center gap-8'>
       <Form
         names={names}
         handleSubmit={handleSubmit}
@@ -41,7 +43,7 @@ function Home() {
       />
 
       <List list={list} total={totalCoStarCredits} />
-    </div>
+    </main>
   )
 }
 
