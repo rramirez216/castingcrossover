@@ -5,8 +5,17 @@ import Button from '../ui/Button'
 function Form({ handleSubmit, handleChange, names }) {
   return (
     <form onSubmit={handleSubmit}>
-      <Input inputName={'actorOne'} handleChange={handleChange} names={names} />
-      <Input inputName={'actorTwo'} handleChange={handleChange} names={names} />
+      <Input
+        inputName={'First actor'}
+        handleChange={handleChange}
+        names={names}
+      />
+      <p>&</p>
+      <Input
+        inputName={'Second Actor'}
+        handleChange={handleChange}
+        names={names}
+      />
       <Button />
     </form>
   )

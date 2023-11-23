@@ -20,7 +20,7 @@ function List({ list, total }) {
     )
   }
 
-  return <div>loading...</div>
+  return <div></div>
 }
 
 export default List

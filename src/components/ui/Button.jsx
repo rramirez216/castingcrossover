@@ -3,7 +3,7 @@ import React from 'react'
 function Button() {
   return (
     <>
-      <button type='submit'>Compare</button>
+      <button type='submit'>Search</button>
     </>
   )
 }
