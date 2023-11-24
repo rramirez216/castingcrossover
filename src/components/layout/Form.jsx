@@ -6,15 +6,17 @@ function Form({ handleSubmit, handleChange, names }) {
   return (
     <form onSubmit={handleSubmit}>
       <Input
-        inputName={'First actor'}
+        inputName={'actorOne'}
         handleChange={handleChange}
         names={names}
+        labelName={'First Actor'}
       />
       <p>&</p>
       <Input
-        inputName={'Second Actor'}
+        inputName={'actorTwo'}
         handleChange={handleChange}
         names={names}
+        labelName={'Second Actor'}
       />
       <Button />
     </form>

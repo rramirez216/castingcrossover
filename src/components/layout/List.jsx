@@ -13,9 +13,11 @@ function List({ list, total }) {
         ) : (
           <p>On-Screen Encounters: {total}</p>
         )}
-        {list.map((obj, index) => (
-          <Item item={obj} key={index} />
-        ))}
+        <div className='flex flex-row justify-center'>
+          {list.map((obj, index) => (
+            <Item item={obj} key={index} />
+          ))}
+        </div>
       </div>
     )
   }

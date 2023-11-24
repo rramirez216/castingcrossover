@@ -9,13 +9,14 @@ function Item({ item }) {
       <img
         src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
         alt={`${title} movie poster`}
+        className='w-full'
       />
     )
   return (
-    <div>
-      <p>{title}</p>
+    <div className='max-w-xs text-2xl text-center'>
       <div>{moviePoster}</div>
-      <p>{release_date.slice(0, 4)}</p>
+      <p className=''>{`(${release_date.slice(0, 4)})`}</p>
+      <p>{title}</p>
     </div>
   )
 }
