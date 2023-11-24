@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Input({ inputName, handleChange, names }) {
+function Input({ inputName, handleChange, names, labelName }) {
   return (
     <div>
-      <label>{inputName}:</label>
+      <label>{labelName}:</label>
       <input
         value={names.inputName}
         name={inputName}
