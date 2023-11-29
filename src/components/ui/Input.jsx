@@ -1,14 +1,15 @@
 import React from 'react'
 
-function Input({ inputName, handleChange, names, labelName }) {
+function Input({ inputName, handleChange, names, labelName, exampleName }) {
   return (
-    <div>
-      <label>{labelName}:</label>
+    <div className=''>
+      <label className='block mr-4'>{labelName}:</label>
       <input
+        className='h-10 block border-b-2 border-black'
         value={names.inputName}
         name={inputName}
         type='text'
-        placeholder='Enter Name'
+        placeholder={'e.g. ' + exampleName}
         onChange={handleChange}
       />
     </div>
