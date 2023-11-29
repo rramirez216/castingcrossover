@@ -2,12 +2,14 @@ import Home from './pages/Home'
 
 function App() {
   return (
-    <div className='h-full flex flex-col items-center p-4'>
-      <h1 className='text-4xl'>Costar Crossover</h1>
-      <h2>
-        Enter the name of an actor in each input field to find any movie they
-        have co starred in:
-      </h2>
+    <div className='h-full flex flex-col items-center gap-16 px-4 pt-16 font-playpen text-lg'>
+      <header className='text-center'>
+        <h1 className='text-4xl mb-4'>Costar Crossover</h1>
+        <p>
+          Enter the name of an actor in each input field to find any movie they
+          have co starred in:
+        </p>
+      </header>
       <Home />
     </div>
   )
