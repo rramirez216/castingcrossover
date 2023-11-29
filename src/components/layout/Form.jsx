@@ -4,19 +4,24 @@ import Button from '../ui/Button'
 
 function Form({ handleSubmit, handleChange, names }) {
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onSubmit={handleSubmit}
+      className='flex flex-col gap-4 border-4 border-black rounded-lg p-8'
+    >
       <Input
         inputName={'actorOne'}
         handleChange={handleChange}
         names={names}
         labelName={'First Actor'}
+        exampleName={'Willem Dafoe'}
       />
-      <p>&</p>
+      <p className=''>&</p>
       <Input
         inputName={'actorTwo'}
         handleChange={handleChange}
         names={names}
         labelName={'Second Actor'}
+        exampleName={'Owen Wilson'}
       />
       <Button />
     </form>
