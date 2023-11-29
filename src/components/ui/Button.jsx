@@ -3,7 +3,9 @@ import React from 'react'
 function Button() {
   return (
     <>
-      <button type='submit'>Search</button>
+      <button className='border-black border-2 rounded-md py-2' type='submit'>
+        Search
+      </button>
     </>
   )
 }
