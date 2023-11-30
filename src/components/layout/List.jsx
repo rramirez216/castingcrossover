@@ -4,16 +4,16 @@ import Item from './Item'
 function List({ list, total }) {
   if (list) {
     return (
-      <div>
+      <div className='text-2xl'>
         {typeof total === 'string' ? (
-          <div>
+          <div className='mb-16'>
             <p>On-Screen Encounters: 0</p>
             <p>{total}</p>
           </div>
         ) : (
-          <p>On-Screen Encounters: {total}</p>
+          <p className='font-bold mb-16'>On-Screen Encounters: {total}</p>
         )}
-        <div className='flex flex-row justify-center'>
+        <div className='flex flex-col items-center gap-8'>
           {list.map((obj, index) => (
             <Item item={obj} key={index} />
           ))}
