@@ -4,7 +4,7 @@ import Item from './Item'
 function List({ list, total }) {
   if (list) {
     return (
-      <div className='text-2xl'>
+      <div className='text-2xl text-center'>
         {typeof total === 'string' ? (
           <div className='mb-16'>
             <p>On-Screen Encounters: 0</p>
