@@ -6,7 +6,7 @@ function Form({ handleSubmit, handleChange, names }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className='flex flex-col gap-4 border-4 border-black rounded-lg p-8'
+      className='flex flex-col gap-4 shadow-ss rounded-lg p-8'
     >
       <Input
         inputName={'actorOne'}
