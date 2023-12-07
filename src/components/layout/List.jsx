@@ -1,10 +1,11 @@
 import React from 'react'
 import Item from './Item'
+import { Element } from 'react-scroll'
 
 function List({ list, total }) {
   if (list) {
     return (
-      <div className='text-2xl text-center'>
+      <Element className='text-2xl text-center' name='list'>
         {typeof total === 'string' ? (
           <div className='mb-16'>
             <p>On-Screen Encounters: 0</p>
@@ -18,11 +19,11 @@ function List({ list, total }) {
             <Item item={obj} key={index} />
           ))}
         </div>
-      </div>
+      </Element>
     )
   }
 
-  return <div></div>
+  return <Element name='list'></Element>
 }
 
 export default List
