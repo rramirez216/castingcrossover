@@ -5,7 +5,7 @@ function Input({ inputName, handleChange, names, labelName, exampleName }) {
     <div className=''>
       <label className='block mr-4'>{labelName}:</label>
       <input
-        className='h-10 block border-b-2 border-black bg-[#F7F7F7]'
+        className='w-full h-10 block border-b-2 border-black bg-[#F7F7F7]'
         value={names.inputName}
         name={inputName}
         type='text'
