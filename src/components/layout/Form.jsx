@@ -6,7 +6,7 @@ function Form({ handleSubmit, handleChange, names }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className='flex flex-col gap-4 shadow-ss rounded-lg p-8'
+      className='min-w-[248px]  sm:w-[512px] flex flex-col gap-4 shadow-ss rounded-lg p-8'
     >
       <Input
         inputName={'actorOne'}
@@ -15,7 +15,7 @@ function Form({ handleSubmit, handleChange, names }) {
         labelName={'First Actor'}
         exampleName={'Willem Dafoe'}
       />
-      <p className=''>&</p>
+      {/* <p className=''>&</p> */}
       <Input
         inputName={'actorTwo'}
         handleChange={handleChange}
