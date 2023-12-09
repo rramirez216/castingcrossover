@@ -37,7 +37,7 @@ function Home() {
   }
 
   return (
-    <main className='h-full flex flex-col sm:items-center gap-16'>
+    <main className='h-full flex flex-col sm:items-center gap-16 overflow-y-scroll'>
       <Form
         names={names}
         handleSubmit={handleSubmit}
