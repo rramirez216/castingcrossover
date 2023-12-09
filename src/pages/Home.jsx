@@ -12,7 +12,9 @@ function Home() {
 
   const { list, fetchData } = useFetch()
 
-  // TODO: start styling! center everything. research other online web tool pages layouts.
+  // TODO: work on medium responsive layout
+
+  // TODO:
 
   let totalCoStarCredits
   if (list) {
@@ -35,7 +37,7 @@ function Home() {
   }
 
   return (
-    <main className='h-full flex flex-col items-center gap-8'>
+    <main className='h-full flex flex-col sm:items-center gap-16'>
       <Form
         names={names}
         handleSubmit={handleSubmit}
