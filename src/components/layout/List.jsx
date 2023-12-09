@@ -5,10 +5,13 @@ import { Element } from 'react-scroll'
 function List({ list, total }) {
   if (list) {
     return (
-      <Element className='text-2xl text-center' name='list'>
+      <Element className='text-2xl text-center pb-16' name='list'>
         {typeof total === 'string' ? (
-          <div className='mb-16'>
-            <p>On-Screen Encounters: 0</p>
+          <div className='text-3xl mb-16'>
+            {/* <p>
+              <span className='font-bold font-mono'>0</span> On-Screen
+              Encounters
+            </p> */}
             <p>{total}</p>
           </div>
         ) : (
