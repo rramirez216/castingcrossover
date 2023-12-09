@@ -13,7 +13,7 @@ function Item({ item }) {
       />
     )
   return (
-    <div className='max-w-[240px] text-center shadow-ss p-4'>
+    <div className='max-w-xs text-center shadow-ss p-4'>
       <div className='mb-2'>{moviePoster}</div>
       <p className=''>{`(${release_date.slice(0, 4)})`}</p>
       <p>{title}</p>
