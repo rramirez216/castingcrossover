@@ -12,9 +12,11 @@ function List({ list, total }) {
             <p>{total}</p>
           </div>
         ) : (
-          <p className='font-bold mb-16'>On-Screen Encounters: {total}</p>
+          <p className='text-3xl mb-16'>
+            <span className='font-bold'>{total}</span> On-Screen Encounters
+          </p>
         )}
-        <div className='flex flex-col items-center gap-8'>
+        <div className='flex flex-col items-center gap-8 md:flex-row md:justify-center md:flex-wrap md:gap-16'>
           {list.map((obj, index) => (
             <Item item={obj} key={index} />
           ))}
