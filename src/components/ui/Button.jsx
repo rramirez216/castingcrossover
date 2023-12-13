@@ -10,7 +10,7 @@ function Button() {
   return (
     <>
       <button
-        className='border-black border-2 rounded-md py-2'
+        className='border-black border-2 rounded-md py-2 bg-slate-950 text-white hover:scale-105 transition'
         onClick={() => scroller.scrollTo('list', options)}
         type='submit'
       >
