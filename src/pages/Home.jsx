@@ -12,9 +12,10 @@ function Home() {
 
   const { list, fetchData } = useFetch()
 
-  // TODO: work on medium responsive layout
-
-  // TODO:
+  // TODO: hide form after form submission and include a toggle for  the form
+  // TODO: display the roles of each actor in the movie
+  // TODO: fix over flow so header doesn't stay, maybe?
+  // TODO: figure out how to hide api key
 
   let totalCoStarCredits
   if (list) {
@@ -37,7 +38,7 @@ function Home() {
   }
 
   return (
-    <main className='h-full flex flex-col sm:items-center gap-16 overflow-y-scroll'>
+    <main className='h-full flex flex-col sm:items-center gap-16'>
       <Form
         names={names}
         handleSubmit={handleSubmit}
