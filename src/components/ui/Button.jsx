@@ -1,17 +1,13 @@
 import React from 'react'
-import { scroller } from 'react-scroll'
 
-function Button() {
-  const options = {
-    delay: 500,
-    duration: 750,
-    smooth: true,
-  }
+function Button({ setSubmitButtonClicked, submitButtonClicked }) {
   return (
     <>
       <button
         className='border-black border-2 rounded-md py-2 bg-slate-950 text-white hover:scale-105 transition'
-        onClick={() => scroller.scrollTo('list', options)}
+        onClick={() => {
+          setSubmitButtonClicked(!submitButtonClicked)
+        }}
         type='submit'
       >
         Search
