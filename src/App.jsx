@@ -2,7 +2,7 @@ import Home from './pages/Home'
 
 function App() {
   return (
-    <div className='h-full flex flex-col gap-16 px-4 pt-16 font-playpen text-lg '>
+    <div className='h-full flex flex-col gap-16 px-4 pt-16 font-playpen text-lg'>
       <header className='text-center'>
         <h1 className='text-4xl mb-4'>Costar Crossover</h1>
         <p>
