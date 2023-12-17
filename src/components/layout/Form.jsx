@@ -2,7 +2,13 @@ import React from 'react'
 import Input from '../ui/Input'
 import Button from '../ui/Button'
 
-function Form({ handleSubmit, handleChange, names }) {
+function Form({
+  handleSubmit,
+  handleChange,
+  names,
+  setSubmitButtonClicked,
+  submitButtonClicked,
+}) {
   return (
     <form
       onSubmit={handleSubmit}
@@ -23,7 +29,10 @@ function Form({ handleSubmit, handleChange, names }) {
         labelName={'Second Actor'}
         exampleName={'Owen Wilson'}
       />
-      <Button />
+      <Button
+        setSubmitButtonClicked={setSubmitButtonClicked}
+        submitButtonClicked={submitButtonClicked}
+      />
     </form>
   )
 }
