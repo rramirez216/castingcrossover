@@ -8,6 +8,7 @@ import randomMessage from '../util/randomMessage'
 
 function Home() {
   const [submitButtonClicked, setSubmitButtonClicked] = React.useState(false)
+  const [disableButton, setDisableButton] = React.useState(false)
   const [names, setNames] = React.useState({
     actorOne: '',
     actorTwo: '',
@@ -20,6 +21,9 @@ function Home() {
     smooth: true,
   }
   const handleChange = (event) => {
+    if (names.actorOne == names.actorTwo) {
+      setDisableButton(true)
+    }
     setNames({
       ...names,
       [event.target.name]: event.target.value,
@@ -52,6 +56,7 @@ function Home() {
         handleChange={handleChange}
         setSubmitButtonClicked={setSubmitButtonClicked}
         submitButtonClicked={submitButtonClicked}
+        disableButton={disableButton}
       />
 
       <List list={list} total={totalCoStarCredits} />
