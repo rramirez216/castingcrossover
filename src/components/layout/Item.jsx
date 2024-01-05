@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Item({ item }) {
-  const { title, poster_path, release_date, role } = item
+  const { title, poster_path, release_date, role, roleTwo } = item
   let moviePoster = 'no image available'
 
   if (poster_path)
@@ -24,7 +24,7 @@ function Item({ item }) {
       <div className='flex flex-col'>
         <p>{title}</p>
         <p>{role}</p>
-        <p>{role}</p>
+        <p>{roleTwo}</p>
         <p>{`${release_date.slice(0, 4)}`}</p>
       </div>
     </div>
