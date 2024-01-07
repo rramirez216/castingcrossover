@@ -13,19 +13,13 @@ function Item({ item }) {
       />
     )
   return (
-    // <div className='max-w-xs text-center shadow-ss p-4'>
-    //   <div className='mb-2'>{moviePoster}</div>
-    //   <p className=''>{`(${release_date.slice(0, 4)})`}</p>
-    //   <p>{title}</p>
-    // </div>
-
-    <div className='flex border-b first:border-t border-black p-4 gap-8'>
+    <div className='flex border-b first:border-t border-black p-4 gap-8 text-base'>
       <div className='w-24'>{moviePoster}</div>
-      <div className='flex flex-col'>
-        <p>{title}</p>
-        <p>{role}</p>
-        <p>{roleTwo}</p>
-        <p>{`${release_date.slice(0, 4)}`}</p>
+      <div className='flex flex-col text-left text-ellipsis whitespace-nowrap'>
+        <p className='font-bold'>{title}</p>
+        <p className='black'>{role}</p>
+        <p className='black'>{roleTwo}</p>
+        <p className='black'>{`${release_date.slice(0, 4)}`}</p>
       </div>
     </div>
   )
