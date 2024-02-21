@@ -1,7 +1,8 @@
 function findDuplicateCredits(array1, array2) {
   let firstArr = removeSelfRoles(array1)
   let secondArr = removeSelfRoles(array2)
-  // console.log(firstArr, secondArr)
+
+  console.log(firstArr[49], secondArr[0])
 
   firstArr = firstArr
     .map((obj) => {
@@ -9,8 +10,9 @@ function findDuplicateCredits(array1, array2) {
       let similarTitleSearch = secondArr.findIndex(
         (item) => obj.title === item.title
       )
-      if (similarTitleSearch > 0) {
+      if (similarTitleSearch >= 0) {
         secondRole = secondArr[similarTitleSearch].character
+        console.log(secondRole)
       }
 
       return {
