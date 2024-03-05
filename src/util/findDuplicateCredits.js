@@ -50,12 +50,9 @@ function findDuplicateCredits(array1, array2) {
   //   })
   // console.log(filteredArr)
 }
-
+//obj.character !== 'Self' && obj.character !== 'Self (archive footage)'
 const removeSelfRoles = (arr) => {
-  return arr.filter(
-    (obj) =>
-      obj.character !== 'Self' && obj.character !== 'Self (archive footage)'
-  )
+  return arr.filter((obj) => !obj.character.includes('Self'))
 }
 
 export default findDuplicateCredits
