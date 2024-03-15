@@ -34,7 +34,6 @@ function Home() {
 
   return (
     <main className='h-full flex flex-col sm:items-center gap-16'>
-      <Test helloWorldFetcher={helloWorldFetcher} />
       <Form
         names={names}
         handleSubmit={handleSubmit}
