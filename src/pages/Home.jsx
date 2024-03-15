@@ -1,11 +1,9 @@
 import React from 'react'
-import axios from 'axios'
 
 import Form from '../components/layout/Form'
 import List from '../components/layout/List'
 import useFetch from '../hooks/useFetch'
 import randomMessage from '../util/randomMessage'
-import Test from '../Test'
 
 function Home() {
   const [names, setNames] = React.useState({
