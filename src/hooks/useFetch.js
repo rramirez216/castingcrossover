@@ -7,35 +7,30 @@ function useFetch() {
   const [secondActorData, setSecondActorData] = React.useState(null)
   const [list, setList] = React.useState(null)
 
-  const movieApiKey = import.meta.env.VITE_MOVIE_API_KEY
-
   const fetchData = async (first, second) => {
     try {
-      let idForFirst = await axios.get(
-        `https://api.themoviedb.org/3/search/person?api_key=${movieApiKey}&query=${first}&include_adult=false&language=en-US&page=1`
+      const getFirstActorId = await axios.get(
+        `/.netlify/functions/getActorId?name=${first}`
       )
-      let idForSecond = await axios.get(
-        `https://api.themoviedb.org/3/search/person?api_key=${movieApiKey}&query=${second}&include_adult=false&language=en-US&page=1`
-      )
-
-      let id = idForFirst.data.results[0].id
-      let secondId = idForSecond.data.results[0].id
-
-      let creditsForFirst = await axios.get(
-        `https://api.themoviedb.org/3/person/${id}/movie_credits?api_key=${movieApiKey}&language=en-US`
-      )
-      let creditsForSecond = await axios.get(
-        `https://api.themoviedb.org/3/person/${secondId}/movie_credits?api_key=${movieApiKey}&language=en-US`
+      const getSecondActorId = await axios.get(
+        `/.netlify/functions/getActorId?name=${second}`
       )
 
-      let firstResult = creditsForFirst.data.cast
+      let firstId = getFirstActorId.data.actorId
+      let secondId = getSecondActorId.data.actorId
+
+      const creditsForFirst = await axios.get(
+        `/.netlify/functions/getActorCredits?id=${firstId}`
+      )
+      const creditsForSecond = await axios.get(
+        `/.netlify/functions/getActorCredits?id=${secondId}`
+      )
+
+      let firstResult = creditsForFirst.data.credits.cast
       setFirstActorData(firstResult)
 
-      // console.log('first actor results', firstResult)
-
-      let secondResult = creditsForSecond.data.cast
+      let secondResult = creditsForSecond.data.credits.cast
       setSecondActorData(secondResult)
-      // console.log('second actor results', secondResult)
 
       let duplicate = findDuplicateCredits(firstResult, secondResult)
       setList(duplicate)
