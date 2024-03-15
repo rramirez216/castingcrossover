@@ -1,29 +1,21 @@
 import React from 'react'
-import { scroller } from 'react-scroll'
+import axios from 'axios'
 
 import Form from '../components/layout/Form'
 import List from '../components/layout/List'
 import useFetch from '../hooks/useFetch'
 import randomMessage from '../util/randomMessage'
+import Test from '../Test'
 
 function Home() {
-  const [submitButtonClicked, setSubmitButtonClicked] = React.useState(false)
-  const [disableButton, setDisableButton] = React.useState(false)
   const [names, setNames] = React.useState({
     actorOne: '',
     actorTwo: '',
   })
 
   const { list, fetchData } = useFetch()
-  const options = {
-    delay: 300,
-    duration: 550,
-    smooth: true,
-  }
+
   const handleChange = (event) => {
-    if (names.actorOne == names.actorTwo) {
-      setDisableButton(true)
-    }
     setNames({
       ...names,
       [event.target.name]: event.target.value,
@@ -36,12 +28,6 @@ function Home() {
 
     fetchData(first, second)
   }
-  React.useEffect(() => {
-    if (submitButtonClicked) {
-      scroller.scrollTo('list', options)
-      console.log('scroll!')
-    }
-  }, [submitButtonClicked])
 
   let totalCoStarCredits
   if (list) {
@@ -50,18 +36,28 @@ function Home() {
 
   return (
     <main className='h-full flex flex-col sm:items-center gap-16'>
+      <Test helloWorldFetcher={helloWorldFetcher} />
       <Form
         names={names}
         handleSubmit={handleSubmit}
         handleChange={handleChange}
-        setSubmitButtonClicked={setSubmitButtonClicked}
-        submitButtonClicked={submitButtonClicked}
-        disableButton={disableButton}
       />
 
-      <List list={list} total={totalCoStarCredits} />
+      <List list={list} total={totalCoStarCredits} names={names} />
     </main>
   )
 }
 
 export default Home
+
+// TODO: hide form after form submission and include a toggle for  the form
+//--------
+// TODO: display the roles of each actor in the movie
+// TODO: when zero matches message is displayed it re-renders and changes the message each new character add or removed from text input
+// TODO: sort the movies listed by release date
+// TODO: prevent identical names from being submitted
+// TODO: figure out how to hide api key
+
+//TODO: when overflow y is added to the app.js wrapper, react-scroll does not work
+
+//TODO: switch the submit toggle from button onclick to form onsubmit
