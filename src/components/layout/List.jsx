@@ -2,7 +2,7 @@ import React from 'react'
 import Item from './Item'
 import { Element } from 'react-scroll'
 
-function List({ list, total }) {
+function List({ list, total, names }) {
   if (list) {
     return (
       <Element className='text-2xl text-center pb-16 max-w-6xl' name='list'>
@@ -15,11 +15,12 @@ function List({ list, total }) {
             <span className='font-bold'>{total}</span> On-Screen Encounters
           </p>
         )}
-        <div className='flex flex-col items-center md:flex-row md:justify-center md:flex-wrap md:gap-16'>
+        {/* flex flex-col items-center md:flex-row md:justify-center md:flex-wrap md:gap-16 */}
+        <ul className=''>
           {list.map((obj, index) => (
-            <Item item={obj} key={index} />
+            <Item item={obj} key={index} names={names} />
           ))}
-        </div>
+        </ul>
       </Element>
     )
   }
