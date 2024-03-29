@@ -10,6 +10,7 @@ function Home() {
     actorOne: '',
     actorTwo: '',
   })
+  // TODO: status 502 error
 
   const { list, fetchData } = useFetch()
 
