@@ -2,11 +2,11 @@ import React from 'react'
 import Input from '../ui/Input'
 import Button from '../ui/Button'
 
-function Form({ handleSubmit, handleChange, names }) {
+function Form({ handleSubmit, handleChange, names, register }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className='min-w-[248px]  sm:w-[512px] flex flex-col gap-4 shadow-ss rounded-lg p-8'
+      className='min-w-[248px] sm:w-[512px] flex flex-col gap-4 shadow-ss rounded-lg p-8'
     >
       <Input
         inputName={'actorOne'}
