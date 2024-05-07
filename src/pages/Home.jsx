@@ -1,4 +1,5 @@
 import React from 'react'
+import { useForm } from 'react-hook-form'
 
 import Form from '../components/layout/Form'
 import List from '../components/layout/List'
@@ -10,7 +11,12 @@ function Home() {
     actorOne: '',
     actorTwo: '',
   })
-  // TODO: status 502 error
+  const {
+    register,
+    // handleSubmit,
+    getValues,
+    formState: { errors },
+  } = useForm()
 
   const { list, fetchData } = useFetch()
 
@@ -39,6 +45,7 @@ function Home() {
         names={names}
         handleSubmit={handleSubmit}
         handleChange={handleChange}
+        register={register}
       />
 
       <List list={list} total={totalCoStarCredits} names={names} />
@@ -47,15 +54,3 @@ function Home() {
 }
 
 export default Home
-
-// TODO: hide form after form submission and include a toggle for  the form
-//--------
-// TODO: display the roles of each actor in the movie
-// TODO: when zero matches message is displayed it re-renders and changes the message each new character add or removed from text input
-// TODO: sort the movies listed by release date
-// TODO: prevent identical names from being submitted
-// TODO: figure out how to hide api key
-
-//TODO: when overflow y is added to the app.js wrapper, react-scroll does not work
-
-//TODO: switch the submit toggle from button onclick to form onsubmit
