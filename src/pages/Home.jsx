@@ -7,31 +7,22 @@ import useFetch from '../hooks/useFetch'
 import randomMessage from '../util/randomMessage'
 
 function Home() {
-  const [names, setNames] = React.useState({
-    actorOne: '',
-    actorTwo: '',
-  })
   const {
     register,
-    // handleSubmit,
+    handleSubmit,
     getValues,
     formState: { errors },
   } = useForm()
 
   const { list, fetchData } = useFetch()
 
-  const handleChange = (event) => {
-    setNames({
-      ...names,
-      [event.target.name]: event.target.value,
-    })
-  }
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    let first = names.actorOne.split(' ').join('%20')
-    let second = names.actorTwo.split(' ').join('%20')
+  const names = getValues()
 
+  const onSubmit = (data) => {
+    let first = data.actorOne.split(' ').join('%20')
+    let second = data.actorTwo.split(' ').join('%20')
     fetchData(first, second)
+    console.log(data)
   }
 
   let totalCoStarCredits
@@ -44,8 +35,10 @@ function Home() {
       <Form
         names={names}
         handleSubmit={handleSubmit}
-        handleChange={handleChange}
         register={register}
+        onSubmit={onSubmit}
+        errors={errors}
+        getValues={getValues}
       />
 
       <List list={list} total={totalCoStarCredits} names={names} />
