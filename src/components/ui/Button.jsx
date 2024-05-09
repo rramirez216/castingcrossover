@@ -14,6 +14,7 @@ function Button() {
         scroller.scrollTo('list', options)
       }}
       type='submit'
+      aria-required
     >
       Search
     </button>

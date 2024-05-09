@@ -2,27 +2,47 @@ import React from 'react'
 import Input from '../ui/Input'
 import Button from '../ui/Button'
 
-function Form({ handleSubmit, handleChange, names, register }) {
+function Form({ handleSubmit, register, onSubmit, errors, getValues }) {
   return (
     <form
-      onSubmit={handleSubmit}
+      onSubmit={handleSubmit(onSubmit)}
       className='min-w-[248px] sm:w-[512px] flex flex-col gap-4 shadow-ss rounded-lg p-8'
     >
-      <Input
-        inputName={'actorOne'}
-        handleChange={handleChange}
-        names={names}
-        labelName={'First Actor'}
-        exampleName={'Willem Dafoe'}
-      />
-      {/* <p className=''>&</p> */}
-      <Input
-        inputName={'actorTwo'}
-        handleChange={handleChange}
-        names={names}
-        labelName={'Second Actor'}
-        exampleName={'Owen Wilson'}
-      />
+      <Input labelText={'First Actor'} labelFor={'actorOne'} errors={errors}>
+        <input
+          className='w-full h-10 block border-b-2 border-black bg-[#F7F7F7] pl-2'
+          type='text'
+          placeholder='e.g. Owen Wilson'
+          {...register('actorOne', {
+            required: 'please type a name for Actor #1',
+            minLength: {
+              value: 2,
+              message: 'Name must be at least 2 characters long.',
+            },
+          })}
+        />
+      </Input>
+      <Input labelText={'Second Actor'} labelFor={'actorTwo'} errors={errors}>
+        <input
+          className='w-full h-10 block border-b-2 border-black bg-[#F7F7F7] pl-2'
+          type='text'
+          placeholder='e.g. willem dafoe'
+          {...register('actorTwo', {
+            required: 'please type a name for Actor #2',
+            minLength: {
+              value: 2,
+              message: 'Name must be at least 2 characters long.',
+            },
+            validate: (value) => {
+              let test = getValues('actorOne')
+              return (
+                value.toLowerCase() !== test.toLowerCase() ||
+                'Actor names cannot match cannot match names'
+              )
+            },
+          })}
+        />
+      </Input>
       <Button />
     </form>
   )
