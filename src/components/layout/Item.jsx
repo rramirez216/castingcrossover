@@ -1,9 +1,16 @@
 import React from 'react'
 
-function Item({ item, names }) {
-  const { title, poster_path, release_date, role, roleTwo } = item
+function Item({ item }) {
+  const {
+    title,
+    poster_path,
+    release_date,
+    role,
+    roleTwo,
+    actorOneName,
+    actorTwoName,
+  } = item
   let moviePoster = 'no image available'
-  const { actorOne, actorTwo } = names
 
   if (poster_path)
     moviePoster = (
@@ -19,10 +26,10 @@ function Item({ item, names }) {
       <div className='grow-[3] text-left'>
         <p className='font-bold truncate'>{title}</p>
         <p className='black'>
-          <span className='font-bold'>{actorOne}:</span> {role}
+          <span className='font-bold'>{actorOneName}:</span> {role}
         </p>
         <p className='black'>
-          <span className='font-bold'>{actorTwo}:</span> {roleTwo}
+          <span className='font-bold'>{actorTwoName}:</span> {roleTwo}
         </p>
         <p className='black'>{`${release_date.slice(0, 4)}`}</p>
       </div>

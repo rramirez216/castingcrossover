@@ -41,7 +41,7 @@ function Home() {
         getValues={getValues}
       />
 
-      <List list={list} total={totalCoStarCredits} names={names} />
+      <List list={list} total={totalCoStarCredits} />
     </main>
   )
 }

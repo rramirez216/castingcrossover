@@ -6,7 +6,7 @@ function App() {
       <header className='text-center'>
         <h1 className='text-4xl mb-4'>Costar Crossover</h1>
         <p>
-          Enter the name of an actor in each input field to find any movie they
+          Enter the name of an actor in each input field to find a movie they
           have co starred in:
         </p>
       </header>

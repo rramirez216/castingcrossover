@@ -2,7 +2,7 @@ import React from 'react'
 import Item from './Item'
 import { Element } from 'react-scroll'
 
-function List({ list, total, names }) {
+function List({ list, total }) {
   if (list) {
     return (
       <Element className='text-2xl text-center pb-16 max-w-6xl' name='list'>
@@ -18,7 +18,7 @@ function List({ list, total, names }) {
         {/* flex flex-col items-center md:flex-row md:justify-center md:flex-wrap md:gap-16 */}
         <ul className=''>
           {list.map((obj, index) => (
-            <Item item={obj} key={index} names={names} />
+            <Item item={obj} key={index} />
           ))}
         </ul>
       </Element>
