@@ -7,12 +7,14 @@ export const handler = async (event) => {
 
     const response = await axios.get(url)
 
-    const actorId = response.data.results[0].id
+    console.log(response.data)
+
+    const actorData = response.data.results[0]
 
     return {
       statusCode: 200,
       body: JSON.stringify({
-        actorId,
+        actorData,
       }),
     }
   } catch (err) {
