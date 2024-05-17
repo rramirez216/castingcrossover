@@ -1,5 +1,6 @@
 import React from 'react'
 import Item from './Item'
+import SortBy from './SortBy'
 import { Element } from 'react-scroll'
 
 function List({ list, total }) {
@@ -16,6 +17,7 @@ function List({ list, total }) {
           </p>
         )}
         {/* flex flex-col items-center md:flex-row md:justify-center md:flex-wrap md:gap-16 */}
+        <SortBy />
         <ul className=''>
           {list.map((obj, index) => (
             <Item item={obj} key={index} />
