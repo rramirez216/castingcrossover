@@ -3,7 +3,14 @@ import Item from './Item'
 import SortBy from './SortBy'
 import { Element } from 'react-scroll'
 
-function List({ list, total }) {
+function List({
+  list,
+  total,
+  selectedOption,
+  setSelectedOption,
+  radioOrder,
+  setRadioOrder,
+}) {
   if (list) {
     return (
       <Element className='text-2xl text-center pb-16 max-w-6xl' name='list'>
@@ -17,7 +24,12 @@ function List({ list, total }) {
           </p>
         )}
         {/* flex flex-col items-center md:flex-row md:justify-center md:flex-wrap md:gap-16 */}
-        <SortBy />
+        <SortBy
+          selectedOption={selectedOption}
+          setSelectedOption={setSelectedOption}
+          radioOrder={radioOrder}
+          setRadioOrder={setRadioOrder}
+        />
         <ul className=''>
           {list.map((obj, index) => (
             <Item item={obj} key={index} />
