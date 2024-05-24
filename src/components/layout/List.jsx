@@ -11,6 +11,12 @@ function List({
   radioOrder,
   setRadioOrder,
 }) {
+  let sortedList
+  if (list) {
+    sortedList = sortListByDescending([...list])
+    console.log(sortedList)
+  }
+
   if (list) {
     return (
       <Element className='text-2xl text-center pb-16 max-w-6xl' name='list'>
@@ -31,7 +37,7 @@ function List({
           setRadioOrder={setRadioOrder}
         />
         <ul className=''>
-          {list.map((obj, index) => (
+          {sortedList.map((obj, index) => (
             <Item item={obj} key={index} />
           ))}
         </ul>
@@ -43,3 +49,13 @@ function List({
 }
 
 export default List
+
+const sortListByDescending = (arr) => {
+  return arr.sort((movieOne, movieTwo) =>
+    movieOne.release_date > movieTwo.release_date
+      ? -1
+      : movieOne.release_date < movieTwo.release_date
+      ? 1
+      : 0
+  )
+}
