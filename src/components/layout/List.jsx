@@ -13,7 +13,7 @@ function List({
 }) {
   let sortedList
   if (list) {
-    sortedList = sortListByDescending([...list])
+    sortedList = sorter([...list], radioOrder)
     console.log(sortedList)
   }
 
@@ -50,12 +50,30 @@ function List({
 
 export default List
 
+const sorter = (arr, str) => {
+  if (str === 'ascending') {
+    return sortListByAscending(arr)
+  } else {
+    return sortListByDescending(arr)
+  }
+}
+
 const sortListByDescending = (arr) => {
   return arr.sort((movieOne, movieTwo) =>
     movieOne.release_date > movieTwo.release_date
       ? -1
       : movieOne.release_date < movieTwo.release_date
       ? 1
+      : 0
+  )
+}
+
+const sortListByAscending = (arr) => {
+  return arr.sort((movieOne, movieTwo) =>
+    movieOne.release_date > movieTwo.release_date
+      ? 1
+      : movieOne.release_date < movieTwo.release_date
+      ? -1
       : 0
   )
 }
