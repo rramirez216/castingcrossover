@@ -2,7 +2,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 
 import Form from '../components/layout/Form'
-import List from '../components/layout/List'
+import List from '../components/layout/list/List'
 import useFetch from '../hooks/useFetch'
 import randomMessage from '../util/randomMessage'
 
