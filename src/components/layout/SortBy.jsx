@@ -43,8 +43,6 @@ function SortBy({
       <label htmlFor='descending'>
         <ArrowDown className='inline-block' />
       </label>
-      <div>{selectedOption}</div>
-      <div>{radioOrder}</div>
     </div>
   )
 }
