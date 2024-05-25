@@ -1,8 +1,23 @@
 import React from 'react'
-import Item from './Item'
+import Item from '../Item'
+import SortBy from '../SortBy'
 import { Element } from 'react-scroll'
+import sorter from './List.helpers'
 
-function List({ list, total }) {
+function List({
+  list,
+  total,
+  selectedOption,
+  setSelectedOption,
+  radioOrder,
+  setRadioOrder,
+}) {
+  let sortedList
+  if (list) {
+    sortedList = sorter([...list], radioOrder, selectedOption)
+    console.log(sortedList)
+  }
+
   if (list) {
     return (
       <Element className='text-2xl text-center pb-16 max-w-6xl' name='list'>
@@ -16,8 +31,14 @@ function List({ list, total }) {
           </p>
         )}
         {/* flex flex-col items-center md:flex-row md:justify-center md:flex-wrap md:gap-16 */}
+        <SortBy
+          selectedOption={selectedOption}
+          setSelectedOption={setSelectedOption}
+          radioOrder={radioOrder}
+          setRadioOrder={setRadioOrder}
+        />
         <ul className=''>
-          {list.map((obj, index) => (
+          {sortedList.map((obj, index) => (
             <Item item={obj} key={index} />
           ))}
         </ul>

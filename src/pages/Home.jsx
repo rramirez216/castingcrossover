@@ -2,11 +2,14 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 
 import Form from '../components/layout/Form'
-import List from '../components/layout/List'
+import List from '../components/layout/list/List'
 import useFetch from '../hooks/useFetch'
 import randomMessage from '../util/randomMessage'
 
 function Home() {
+  const [selectedOption, setSelectedOption] = React.useState('date')
+  const [radioOrder, setRadioOrder] = React.useState('descending')
+
   const {
     register,
     handleSubmit,
@@ -41,7 +44,14 @@ function Home() {
         getValues={getValues}
       />
 
-      <List list={list} total={totalCoStarCredits} />
+      <List
+        list={list}
+        total={totalCoStarCredits}
+        selectedOption={selectedOption}
+        setSelectedOption={setSelectedOption}
+        radioOrder={radioOrder}
+        setRadioOrder={setRadioOrder}
+      />
     </main>
   )
 }
