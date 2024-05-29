@@ -12,9 +12,18 @@ function List({
   radioOrder,
   setRadioOrder,
 }) {
+  let sortBy = <div></div>
   let sortedList
   if (list) {
     sortedList = sorter([...list], radioOrder, selectedOption)
+    sortBy = (
+      <SortBy
+        selectedOption={selectedOption}
+        setSelectedOption={setSelectedOption}
+        radioOrder={radioOrder}
+        setRadioOrder={setRadioOrder}
+      />
+    )
     console.log(sortedList)
   }
 
@@ -31,12 +40,7 @@ function List({
           </p>
         )}
         {/* flex flex-col items-center md:flex-row md:justify-center md:flex-wrap md:gap-16 */}
-        <SortBy
-          selectedOption={selectedOption}
-          setSelectedOption={setSelectedOption}
-          radioOrder={radioOrder}
-          setRadioOrder={setRadioOrder}
-        />
+
         <ul className=''>
           {sortedList.map((obj, index) => (
             <Item item={obj} key={index} />
