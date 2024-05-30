@@ -1,12 +1,13 @@
 import React from 'react'
 import { ArrowUp, ArrowDown } from 'lucide-react'
 import Input from '../ui/Input'
+import SortOrderButton from '../ui/SortOrderButton'
 
 function SortBy({
   selectedOption,
   setSelectedOption,
-  radioOrder,
-  setRadioOrder,
+  sortOrder,
+  setSortOrder,
 }) {
   return (
     <div className='text-base'>
@@ -20,8 +21,8 @@ function SortBy({
         <option value='date'>Release Date</option>
         <option value='alphabetical'>Alphabetical</option>
       </select>
-
-      <input
+      <SortOrderButton sortOrder={sortOrder} setSortOrder={setSortOrder} />
+      {/* <input
         type='radio'
         name='sort'
         id='ascending'
@@ -29,6 +30,7 @@ function SortBy({
         value='ascending'
         onChange={(event) => setRadioOrder(event.target.value)}
       />
+
       <label htmlFor='ascending'>
         <ArrowUp className='inline-block' />
       </label>
@@ -39,7 +41,7 @@ function SortBy({
         checked={radioOrder === 'descending'}
         value='descending'
         onChange={(event) => setRadioOrder(event.target.value)}
-      />
+      /> */}
       <label htmlFor='descending'>
         <ArrowDown className='inline-block' />
       </label>
