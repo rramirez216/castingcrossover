@@ -8,7 +8,7 @@ import randomMessage from '../util/randomMessage'
 
 function Home() {
   const [selectedOption, setSelectedOption] = React.useState('date')
-  const [radioOrder, setRadioOrder] = React.useState('descending')
+  const [sortOrder, setSortOrder] = React.useState('descending')
 
   const {
     register,
@@ -49,8 +49,8 @@ function Home() {
         total={totalCoStarCredits}
         selectedOption={selectedOption}
         setSelectedOption={setSelectedOption}
-        radioOrder={radioOrder}
-        setRadioOrder={setRadioOrder}
+        sortOrder={sortOrder}
+        setSortOrder={setSortOrder}
       />
     </main>
   )
