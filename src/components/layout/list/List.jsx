@@ -9,19 +9,19 @@ function List({
   total,
   selectedOption,
   setSelectedOption,
-  radioOrder,
-  setRadioOrder,
+  sortOrder,
+  setSortOrder,
 }) {
   let sortBy = <div></div>
   let sortedList
   if (list) {
-    sortedList = sorter([...list], radioOrder, selectedOption)
+    sortedList = sorter([...list], sortOrder, selectedOption)
     sortBy = (
       <SortBy
         selectedOption={selectedOption}
         setSelectedOption={setSelectedOption}
-        radioOrder={radioOrder}
-        setRadioOrder={setRadioOrder}
+        sortOrder={sortOrder}
+        setSortOrder={setSortOrder}
       />
     )
     console.log(sortedList)
@@ -40,7 +40,7 @@ function List({
           </p>
         )}
         {/* flex flex-col items-center md:flex-row md:justify-center md:flex-wrap md:gap-16 */}
-
+        {sortBy}
         <ul className=''>
           {sortedList.map((obj, index) => (
             <Item item={obj} key={index} />
