@@ -14,8 +14,8 @@ function SortOrderButton({ sortOrder, setSortOrder }) {
     >
       <svg
         xmlns='http://www.w3.org/2000/svg'
-        width='200'
-        height='200'
+        width='40'
+        height='40'
         viewBox='0 0 24 24'
         fill='none'
         stroke='black'
