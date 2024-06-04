@@ -8,10 +8,10 @@ function SortBy({
   setSortOrder,
 }) {
   return (
-    <div className='text-base'>
-      <label htmlFor='sortBy'>Sort By: </label>
+    <div className='flex justify-center items-baseline text-base'>
+      <label htmlFor='sortBy'>Sort By:</label>
       <select
-        className=''
+        className='border-2 border-black'
         value={selectedOption}
         onChange={(event) => setSelectedOption(event.target.value)}
         id='sortBy'
