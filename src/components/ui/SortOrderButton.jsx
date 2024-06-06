@@ -19,10 +19,10 @@ function SortOrderButton({ sortOrder, setSortOrder }) {
         viewBox='0 0 24 24'
         fill='none'
         stroke='black'
-        stroke-width='2'
-        stroke-linecap='round'
-        stroke-linejoin='round'
-        className='lucide lucide-arrow-down-up'
+        strokeWidth='2'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        className='lucide lucide-arrow-down-up inline-block'
       >
         <path d='m3 16 4 4 4-4' stroke={leftArrow} />
         <path d='M7 20V4' stroke={leftArrow} />
