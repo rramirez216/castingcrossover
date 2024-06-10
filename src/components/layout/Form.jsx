@@ -28,7 +28,7 @@ function Form({ handleSubmit, register, onSubmit, errors, getValues }) {
           className='w-full h-10 block border-b-2 border-black bg-[#F7F7F7] pl-2'
           type='text'
           id='actorTwo'
-          placeholder='e.g. willem dafoe'
+          placeholder='e.g. Willem Dafoe'
           {...register('actorTwo', {
             required: 'please type a name for Actor #2',
             minLength: {
