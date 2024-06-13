@@ -26,7 +26,6 @@ function List({
     )
     console.log(sortedList)
   }
-
   if (list) {
     return (
       <Element className='text-2xl text-center pb-16 max-w-6xl' name='list'>

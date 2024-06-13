@@ -21,17 +21,17 @@ function Item({ item }) {
       />
     )
   return (
-    <li className='flex border-b first:border-t border-black p-4 gap-8 text-base overflow-hidden'>
-      <div className='w-24 shrink'>{moviePoster}</div>
-      <div className='grow-[3] text-left'>
-        <p className='font-bold truncate'>{title}</p>
-        <p className='black'>
-          <span className='font-bold'>{actorOneName}:</span> {role}
+    <li className='flex border-b first:border-t border-black p-4 gap-2 text-base'>
+      <div className='min-w-16 max-w-16'>{moviePoster}</div>
+      <div className='text-left'>
+        <p className='font-bold '>{title}</p>
+        <p className=''>
+          <span className='font-bold'>1st:</span> {role}
         </p>
-        <p className='black'>
-          <span className='font-bold'>{actorTwoName}:</span> {roleTwo}
+        <p className=''>
+          <span className='font-bold'>2nd:</span> {roleTwo}
         </p>
-        <p className='black'>{`${release_date.slice(0, 4)}`}</p>
+        <p className=''>{`${release_date.slice(0, 4)}`}</p>
       </div>
     </li>
   )
