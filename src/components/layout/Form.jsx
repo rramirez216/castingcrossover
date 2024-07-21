@@ -39,7 +39,7 @@ function Form({ handleSubmit, register, onSubmit, errors, getValues }) {
               let test = getValues('actorOne')
               return (
                 value.toLowerCase() !== test.toLowerCase() ||
-                'Actor names cannot match cannot match names'
+                'Please enter different names for each actor.'
               )
             },
           })}
