@@ -8,7 +8,7 @@ function Input({ labelText, labelFor, children, errors }) {
       </label>
 
       {children}
-      <p>{errors[labelFor]?.message}</p>
+      <p className='text-red-600'>{errors[labelFor]?.message}</p>
     </div>
   )
 }
